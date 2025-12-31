@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, "public")));
 const session = require("express-session");
 
 app.use(session({
-  secret: "your_secret_key",  // change this to something secure
+  secret: "Chixxing!23@5",  // change this to something secure
   resave: false,
   saveUninitialized: false,
 }));
