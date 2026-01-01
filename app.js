@@ -29,6 +29,14 @@ mongoose
   .then(() => console.log("MongoDB connected successfully"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
+const fs = require("fs");
+
+const uploadDir = path.join(__dirname, "public/uploads/resources");
+
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
 // ---------------- ROUTES ----------------
 const authRoutes = require("./routes/authRoutes");
 app.use("/", authRoutes);
